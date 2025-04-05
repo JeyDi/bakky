@@ -18,23 +18,6 @@ If you find this work useful don't remember to cite me and this repository, if y
 - Python uv: for package management
 - Docker: for containerization
 
-## Progress
-
-- [x] Makefile
-- [x] Project structure
-- [x] utils
-- [x] config
-- [ ] Docker
-- [ ] docker-compose
-- [ ] devcontainer
-- [ ] postgres with different mode (ORM, raw, yaml)
-- [ ] mongo
-- [ ] redis
-- [ ] file (parquet, delta)
-- [ ] models
-- [ ] schemas
-- [ ] routes
-
 ## Features
 
 I'm trying to be much more modular as possible.
@@ -94,3 +77,25 @@ I'm trying to be much more modular as possible.
    3. User Makefile: `make run`
    4. Use vscode debugger configured inside the repo
 6. Launch docker-compose to create the backend: `make launch`
+
+## Progress
+
+List of features that I'm working on and things that I want to implement in this project.
+
+- [x] project setup with uv
+- [x] Makefile
+- [x] Project structure
+- [x] utils
+- [x] config
+- [x] vscode settings and debugger
+- [x] gitlab and github templates
+- [x] pytest configuration
+- [ ] docker-compose
+- [ ] devcontainer
+- [ ] postgres with different mode (ORM, raw, yaml)
+- [ ] mongo
+- [ ] redis
+- [ ] file (parquet, delta)
+- [ ] models
+- [ ] schemas
+- [ ] routes
