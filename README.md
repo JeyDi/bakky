@@ -12,12 +12,28 @@ I'll try to keep this project maintained and updated meanwhile I'll continue wor
 
 If you find this work useful don't remember to cite me and this repository, if you want you can also contact me for sponsorship or collaboration.
 
-## Done and tested
+## Requirements
 
-- [] Makefile
-- [] Project structure
-- [] utils
-- [] config
+- Python 3.12
+- Python uv: for package management
+- Docker: for containerization
+
+## Progress
+
+- [x] Makefile
+- [x] Project structure
+- [x] utils
+- [x] config
+- [ ] Docker
+- [ ] docker-compose
+- [ ] devcontainer
+- [ ] postgres with different mode (ORM, raw, yaml)
+- [ ] mongo
+- [ ] redis
+- [ ] file (parquet, delta)
+- [ ] models
+- [ ] schemas
+- [ ] routes
 
 ## Features
 
@@ -48,6 +64,33 @@ I'm trying to be much more modular as possible.
 - Admin pannel and auth management
 - Envoy proxy
 - Certbot
+- [Conventional commit](https://www.conventionalcommits.org/en/v1.0.0/)
+- Pre-commit
 
 ## How to use it
 
+1. Clone the repository
+2. Create a new `.env` based on `.env.example`:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Configure the `.env` variables:
+
+   ```bash
+    LOG_VERBOSITY=INFO
+    APP_NAME=bakky
+    APP_VERSION=0.0.1
+    DEBUG=True
+    API_PREFIX=/api/v1
+    SECRET_KEY=your-secret-key
+   ```
+
+4. Install the dependencies with python uv: `uv sync`
+5. Run the project: you have different method to use
+   1. Use the command `uvicorn main:app --reload` to run the project manually with uvicorn
+   2. Use the bash script: `./scripts/launch.sh`
+   3. User Makefile: `make run`
+   4. Use vscode debugger configured inside the repo
+6. Launch docker-compose to create the backend: `make launch`
