@@ -1,3 +1,40 @@
 {
-    "makefile.configureOnOpen": false
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/activate",
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "files.autoSave": "afterDelay",
+    "autoDocstring.customTemplatePath": "",
+    "window.title": "${rootName} ${separator} ${activeEditorShort}",
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "python.languageServer": "Pylance",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "notebook.lineNumbers": "on",
+    "editor.inlineSuggest.enabled": true,
+    "editor.formatOnType": true,
+    "git.autofetch": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    }
 }

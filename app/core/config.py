@@ -48,7 +48,7 @@ class Settings(BaseSettings):
     DATABASE: DatabaseSettings = DatabaseSettings()
 
     # Logger settings
-    LOGGER: LoggerSettings = LoggerSettings()
+    LOGGER: LoggerSettings = LoggerSettings(repo_path=REPO_PATH)
 
     @classmethod
     @cache
