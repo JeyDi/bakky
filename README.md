@@ -82,20 +82,31 @@ I'm trying to be much more modular as possible.
 
 List of features that I'm working on and things that I want to implement in this project.
 
-- [x] project setup with uv
+- [x] Project setup with uv
 - [x] Makefile
 - [x] Project structure
-- [x] utils
-- [x] config
+- [x] list of utils
+- [x] config with pydantic
 - [x] vscode settings and debugger
 - [x] gitlab and github templates
 - [x] pytest configuration
 - [x] docker-compose
 - [x] devcontainer
 - [x] postgres with different mode (ORM, raw, yaml)
-- [x] mongo
-- [ ] redis
-- [ ] file (parquet, delta)
-- [ ] models
-- [ ] schemas
-- [ ] routes
+- [x] mongodb
+- [ ] redis for cache and queue
+- [ ] middleware for authentication
+- [ ] file management (parquet, delta) using polars and duckdb
+- [ ] FastAPI project definition
+- [ ] lifespan events in FastAPI
+- [ ] example of models
+- [ ] example of schemas
+- [ ] example of routes with logs, cache, queue, auth, versions, docs
+- [ ] typer example for a CLI system
+- [ ] uvicorn and granian support
+- [ ] vector database (different types: qdrant, pgvector, redis)
+- [ ] authentication system
+- [ ] admin pannel
+- [ ] envoy proxy
+- [ ] certbot
+- [ ] better log system (logfire, otel, sentry)
