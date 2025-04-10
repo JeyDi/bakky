@@ -3,11 +3,12 @@ from functools import cache
 from typing import List
 
 from loguru import logger
-from pydantic import AnyHttpUrl
+from pydantic import AnyHttpUrl, ValidationError
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.core.settings.database import DatabaseSettings
 from app.core.settings.logger import LoggerSettings
+from app.core.settings.mongo import MongoDBSettings
 
 
 class Settings(BaseSettings):
@@ -47,6 +48,12 @@ class Settings(BaseSettings):
     # Database settings
     DATABASE: DatabaseSettings = DatabaseSettings()
 
+    # MongoDB settings
+    MONGODB: MongoDBSettings = MongoDBSettings()
+
+    # Redis settings
+    # REDIS: RedisSettings = RedisSettings()
+
     # Logger settings
     LOGGER: LoggerSettings = LoggerSettings(repo_path=REPO_PATH)
 
@@ -58,9 +65,12 @@ class Settings(BaseSettings):
             settings = cls()  # noqa
             settings.LOGGER.setup_logger()  # Initialize logger
             return settings
+        except ValidationError as e:
+            logger.error(f"Validation error in settings: {e}")
+            raise  # Raise the validation error to alert the user
         except Exception as message:
             logger.error(f"Error: impossible to get the settings: {message}")
-            return None
+            raise
 
 
 # default settings with initialization

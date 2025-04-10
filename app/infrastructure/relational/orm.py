@@ -4,8 +4,8 @@ from loguru import logger
 from sqlalchemy import MetaData, inspect, text
 from sqlalchemy.engine import Engine
 
-from app.infrastructure.relational.engine import AlchemyEngine
 from app.domain.models import base
+from app.infrastructure.relational.engine import AlchemyEngine
 
 
 def create_tables(engine: Engine = AlchemyEngine, schema_name: str | None = None) -> bool:
