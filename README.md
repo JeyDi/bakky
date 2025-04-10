@@ -91,7 +91,7 @@ List of features that I'm working on and things that I want to implement in this
 - [x] gitlab and github templates
 - [x] pytest configuration
 - [x] docker-compose
-- [ ] devcontainer
+- [x] devcontainer
 - [x] postgres with different mode (ORM, raw, yaml)
 - [x] mongo
 - [ ] redis

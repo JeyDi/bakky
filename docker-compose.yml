@@ -2,7 +2,7 @@
 version: "3.8"
 services:
   redis:
-      image: redis:7.0.12-bookworm
+      image: redis:7.4-bookworm
       container_name: redis
       restart: always
       env_file:
@@ -26,7 +26,7 @@ services:
   # If you want to connect you have to use internal docker post and settings
   redis_insight:
     # redis db visualization dashboard
-    image: redislabs/redisinsight:1.14.0
+    image: redislabs/redisinsight:2.68.0
     container_name: redis_insight
     ports:
       - ${REDIS_INSIGHT_PORT:-6363}:8001
@@ -83,7 +83,7 @@ services:
       - bakky
 
   mongodb:
-    image: mongo:7.0
+    image: mongo:8.0.6
     container_name: mongodb
     restart: unless-stopped
     environment:
@@ -97,7 +97,7 @@ services:
     command: ["--setParameter", "diagnosticDataCollectionEnabled=false"]
 
   mongo-express:
-    image: mongo-express:latest
+    image: mongo-express:1.0.2-18
     container_name: mongo-express
     restart: unless-stopped
     ports:

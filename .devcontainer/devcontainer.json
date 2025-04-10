@@ -1,0 +1,127 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.187.0/containers/docker-existing-docker-compose
+// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
+{
+    "name": "devcontainer",
+    // Update the 'dockerComposeFile' list if you have more compose files or use different names.
+    // The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    // The 'service' property is the name of the service for the container that VS Code should
+    // use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+    "service": "develop",
+    // The optional 'workspaceFolder' property is the path VS Code should open by default when
+    // connected. This is typically a file mount in .devcontainer/docker-compose.yml
+    "workspaceFolder": "/workspace",
+    // Set *default* container specific settings.json values on container create.
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/activate",
+                "python.envFile": "${workspaceFolder}/.env",
+                "python.testing.pytestArgs": [
+                    "tests"
+                ],
+                "python.testing.unittestEnabled": false,
+                "python.testing.pytestEnabled": true,
+                "files.autoSave": "afterDelay",
+                "autoDocstring.customTemplatePath": "",
+                "window.title": "${rootName} ${separator} ${activeEditorShort}",
+                "[python]": {
+                    "editor.insertSpaces": true,
+                    "editor.tabSize": 4
+                },
+                "files.exclude": {
+                    "**/__pycache__": true
+                },
+                "python.languageServer": "Pylance",
+                "editor.formatOnSave": true,
+                "editor.formatOnPaste": true,
+                "notebook.lineNumbers": "on",
+                "editor.inlineSuggest.enabled": true,
+                "editor.formatOnType": true,
+                "git.autofetch": true,
+                "editor.defaultFormatter": "charliermarsh.ruff",
+                "python.terminal.activateEnvInCurrentTerminal": true,
+                "[toml]": {
+                    "editor.defaultFormatter": "tamasfe.even-better-toml"
+                },
+                "[yaml]": {
+                    "editor.defaultFormatter": "redhat.vscode-yaml"
+                },
+                "[dockerfile]": {
+                    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+                },
+                "[markdown]": {
+                    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+                }
+            },
+            "extensions": [
+                "njpwerner.autodocstring",
+                "ms-python.black-formatter",
+                "streetsidesoftware.code-spell-checker",
+                "naumovs.color-highlight",
+                "ms-vscode-remote.remote-containers",
+                "ms-azuretools.vscode-docker",
+                "dbaeumer.vscode-eslint",
+                "tamasfe.even-better-toml",
+                "mhutchie.git-graph",
+                "donjayamanne.githistory",
+                "GitHub.codespaces",
+                "GitHub.copilot-chat",
+                "GitHub.vscode-pull-request-github",
+                "GitHub.remotehub",
+                "eamodio.gitlens",
+                "oderwat.indent-rainbow",
+                "VisualStudioExptTeam.vscodeintellicode",
+                "VisualStudioExptTeam.intellicode-api-usage-examples",
+                "VisualStudioExptTeam.vscodeintellicode-completions",
+                "VisualStudioExptTeam.vscodeintellicode-insiders",
+                "streetsidesoftware.code-spell-checker-italian",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.vscode-jupyter-cell-tags",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers",
+                "ms-toolsai.vscode-jupyter-powertoys",
+                "ms-toolsai.vscode-jupyter-slideshow",
+                "ms-kubernetes-tools.vscode-kubernetes-tools",
+                "ms-vsliveshare.vsliveshare",
+                "ms-vscode.makefile-tools",
+                "yzhang.markdown-all-in-one",
+                "DavidAnson.vscode-markdownlint",
+                "ms-python.mypy-type-checker",
+                "ms-playwright.playwright",
+                "ms-python.vscode-pylance",
+                "ms-python.pylint",
+                "ms-python.python",
+                "KevinRose.vsc-python-indent",
+                "mechatroner.rainbow-csv",
+                "ms-vscode-remote.remote-ssh",
+                "ms-vscode-remote.remote-ssh-edit",
+                "ms-vscode.remote-server",
+                "ms-vscode-remote.vscode-remote-extensionpack",
+                "ms-vscode.remote-explorer",
+                "ms-vscode.remote-repositories",
+                "medo64.render-crlf",
+                "charliermarsh.ruff",
+                "vscode-icons-team.vscode-icons",
+                "ms-vscode-remote.remote-wsl",
+                "redhat.vscode-yaml"
+            ]
+        }
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [
+    //     8042
+    // ]
+    // Uncomment the next line if you want start specific services in your Docker Compose config.
+    // "runServices": [],
+    // Uncomment the next line if you want to keep your containers running after VS Code shuts down.
+    // "shutdownAction": "none",
+    // Uncomment the next line to run commands after the container is created - for example installing curl.
+    // "postCreateCommand": "apt-get update && apt-get install -y curl",
+    // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+    // "remoteUser": "vscode"
+}
