@@ -90,10 +90,10 @@ List of features that I'm working on and things that I want to implement in this
 - [x] vscode settings and debugger
 - [x] gitlab and github templates
 - [x] pytest configuration
-- [ ] docker-compose
+- [x] docker-compose
 - [ ] devcontainer
-- [ ] postgres with different mode (ORM, raw, yaml)
-- [ ] mongo
+- [x] postgres with different mode (ORM, raw, yaml)
+- [x] mongo
 - [ ] redis
 - [ ] file (parquet, delta)
 - [ ] models
